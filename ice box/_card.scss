@@ -1,0 +1,195 @@
+.card{
+    background-color: $color-grey-light-1;
+    grid-column: 1 /-1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+    grid-gap: 6rem;
+    padding: 10rem 20rem;
+    
+    &__box{
+        position: relative;
+        perspective: 20000rem;
+
+    }
+
+    &__front{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(6, 7rem) 1rem;
+        width: 100%;
+        transition: all .8s;
+        transform: rotateY(0deg);
+        background-color: white;
+        box-shadow: 0rem 2rem 4rem rgba($color: #000000, $alpha: .15);
+    }
+    
+    &__box:hover &__front {
+        transform: rotateY(-180deg);
+    }
+
+    &__heading--1{
+        text-transform: uppercase;
+        font-size: 2.2rem;
+        font-family: sans-serif;
+        font-weight: lighter;
+        margin-left: 55%;
+        margin-top: 57%;
+        
+    }
+    
+    &__heading--2{
+        text-transform: uppercase;
+        font-size: 4rem;
+        font-family: mononserat;
+        font-weight: lighter;
+        margin-top: 23%;
+        margin-left: 20%;
+        
+    }
+   
+    .cta{
+        background-color: white;
+    }
+    &__link{
+
+        &:link,
+        &:visited{
+            color: black;
+            text-decoration: none;
+            text-transform: uppercase;
+            background-color: white;
+            display: block;
+            width: 12rem;
+            height: 4.6rem;
+            transform: translateX(-11.7rem) translateY(31rem);
+            text-align: center;
+            padding-top: 1.6rem;
+            border-radius: 100px;
+            font-size: 1.3rem;
+            transition: all .2s;
+        }
+
+
+        &::after{
+            content: "";
+            height: 100%;
+            width: 100%;
+            display: inline-block;
+            border-radius: 50px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            transition: all .8s;
+        }
+    
+        &:hover::after{
+            transform: scaleX(1.2) scaleY(1.6);
+            opacity: 0;
+    
+        }
+    
+        &:hover{
+            transform: translateY(30.7rem) translateX(-11.7rem);
+            box-shadow: 0 2.4rem 2.6rem rgba($color: #000000, $alpha: .6);
+        }
+
+        &:active{
+            box-shadow: 0 0 0 0;
+            transform: translateY(32rem) translateX(-11.7rem);
+        }
+    }
+    &__back{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(6, 7rem) 1rem;
+        height: 43rem;
+        width: 100%;
+        transition: all .8s;
+        width: 100%;
+        position: absolute;
+        color: white;
+        top: 0px;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+        left: 0px;
+        // backface-visibility: hidden;
+
+        
+    }
+    
+    .firstback{
+        background-image: linear-gradient(to bottom right, $color-secondary, $color-secondary-dark);
+    }
+    .secondback{
+        background-image: linear-gradient(to bottom right, $color-green-dark, $color-green-light);
+    }
+    .thirdback{
+        background-image: linear-gradient(120deg, $color-tertiary, $color-tertiary-dark);
+    }
+        
+    
+    &__box:hover &__back {
+        transform: rotateY(0deg);
+    }
+        
+    &__item{
+    grid-row: 1/4;
+    grid-column: 1/-1;
+    clip-path: polygon(0 0, 100% 0, 100% 83%, 0 100%);
+    }
+
+    &__image{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+
+    &__detail{
+        grid-row: 4/-1;
+        grid-column: 1/-1;
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+    }
+
+    &__collection{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-row: 2/5;
+        align-items: center;
+    }
+
+    &__heading{
+        text-align: center;
+        align-self: center;
+        font-size: 2rem;
+        text-transform: uppercase;
+        background-image: linear-gradient(120deg, $color-primary, $color-primary-dark);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        padding-bottom: 1rem;
+        margin: 0 1.2rem;
+        font-weight: lighter;
+        border-bottom: 1px solid $color-grey-light-2;
+    }
+    &__paragraph{
+        text-align: center;
+        font-size: 1.7rem;
+        transform: translateY(.7rem);
+        font-weight: lighter;
+        text-transform: uppercase;
+        &:not(:last-child){
+            border-bottom: 1px solid $color-grey-light-2;
+            padding-bottom: 1.7rem;
+            margin: 0 2rem;
+        }
+        &:nth-child(2){
+            transform: translateY(1.5rem);
+        }
+        &:last-child{
+            transform: translateY(2rem);
+        }
+    }
+}

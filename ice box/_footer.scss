@@ -1,0 +1,67 @@
+.footer{
+    background-color: black;
+    grid-column: 1/-1;
+    height: 40rem;
+    position: relative;
+
+    .nav{
+
+        transform: translateY(7rem);
+
+
+        &__list{
+            list-style: none;
+            display: grid;
+            grid-gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+        }
+
+        &__link{
+
+            &:link,
+            &:visited{
+                text-decoration: none;
+                color: white;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: lighter;
+                padding: 1.5rem;
+                align-self: center;
+                font-size: 1.4rem;
+                transition: all .2s;
+                display: block;
+            }
+
+
+        }
+        &__link:hover,
+        &__link:active{
+            transform: translateY(-3px);
+            background-color: rgba($color: #fff, $alpha: .1);
+        }
+    }
+
+    .copy-right{
+        font-size: 1.9rem;
+        color: $color-grey-light-1;
+        margin-top: 5rem;
+        transform: translateY(23rem);
+        text-align: center;
+    }
+}
+
+.zeezo{
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: lighter;
+    background-image: linear-gradient(to bottom right, red, blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%);
+    left: 50%;
+
+}

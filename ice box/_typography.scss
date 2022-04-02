@@ -1,0 +1,123 @@
+$color-primary: #3645cd;
+$color-secondary: #c69963;
+$color-secondary-dark: #b28451;
+
+
+$color-primary-dark: #1c3147;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+
+$color-grey-dark-1: #54483a;
+$color-grey-dark-2: #6d5d4b;
+
+
+$color-tertiary: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+
+$color-green-dark:#28b485;
+$color-green-light:#7ed56f;
+$color-green-light2:#52b840;
+
+.container{
+    background-color: $color-grey-light-2;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.btn__gold{
+
+    &:link,
+    &:visited{
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        display: inline-block;
+        background-color: #c69963;
+        box-shadow: 0 2rem 4rem rgba($color: #000000, $alpha: .3);
+        padding: 2rem 3rem;
+        border-radius: 50px;
+        position: relative;
+        transition: all .4s;
+    }
+
+    &::after{
+        content: "";
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+        border-radius: 50px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: -1;
+        transition: all .8s;
+    }
+
+    &:hover::after{
+        transform: scaleX(1.2) scaleY(1.6);
+        opacity: 0;
+
+    }
+
+    &:hover{
+        transform: translateY(-2.3rem);
+        box-shadow: 0 2.4rem 2.6rem rgba($color: #000000, $alpha: .6);
+    }
+
+    &:active{
+        transform: translateY(-1rem);
+    }
+}
+
+
+
+.lang{
+    &:link,
+    &:visited{
+        text-decoration: none;
+        color: black;
+        background-color: $color-green-light;
+        text-align: center;
+        border-radius: 50px;
+        text-transform: uppercase;
+        top: -2.8rem;
+        right: -91rem;
+        font-size: 1.4rem;
+        position: relative;
+        padding: 1.2rem 2rem;
+        outline: none;
+        transition: all .4s;
+    }
+
+    &::after{
+        content: "";
+        height: 100%;
+        width: 100%;
+        border-radius: 5rem;
+        position: absolute;
+        background-color: $color-green-light;
+        top: 0px;
+        z-index: -2;
+        left: 0px;
+        transition: all .6s;
+    }
+
+    &:hover::after{
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+    &:hover{
+        transform: translateY(4rem);
+        box-shadow: 0 1rem 4rem rgba($color: #000000, $alpha: .3);
+    }
+
+    &:active{
+        box-shadow: 0 0 0 0;
+        outline: none;
+    }
+}

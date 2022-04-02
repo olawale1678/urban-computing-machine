@@ -1,0 +1,106 @@
+.header{
+    grid-column: 1 /span 7;
+    background-image: linear-gradient(to bottom right, rgba($color-primary, .8), rgba($color-primary, .9)), url(image/oil.jfif);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 80vh;
+
+
+    &__logo{
+
+        transform: translate(-7%, 51%);
+        .logo{
+            height: 5rem;
+            width: 5rem;
+        }
+    }
+
+
+    &__text{
+        transform: translate(27%, 70%);
+
+        .first-heading{
+
+            &__primary{
+                color: white;
+                text-transform: uppercase;
+                font-size: 9rem;
+                font-weight: lighter;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                letter-spacing: 1.5rem;
+                animation: header--1 2s ease-in-out;
+            }
+
+            &__secondary{
+                color: white;
+                font-size: 1rem;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-weight: lighter;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                animation: header--2 2s ease-in-out;
+            }
+        }
+    }
+
+    &__button{
+        position: absolute;
+        top: 30%;
+        left: 39%;
+        font-size: 1.9rem;
+        transform: translateX(0) translateY(-2.5rem);
+        animation: go 1.5s;
+
+        &::after{
+            background-color: $color-secondary;
+        }
+    }
+}
+
+@keyframes go{
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(-47%);
+        opacity: 1;
+    }
+}
+
+@keyframes header--1{
+    0%{
+        transform: translateX(-10%);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(10%);
+        opacity: 1;
+    }
+    75%{
+        transform: translateX(-2%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes header--2{
+    0%{
+        transform: translateX(10%);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-10%);
+        opacity: 1;
+    }
+    75%{
+        transform: translateX(2%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
